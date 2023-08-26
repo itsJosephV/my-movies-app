@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🎞️ Films finder</title>
+  <link rel="stylesheet" href="src/styles.css">
+  <link href="https://fonts.cdnfonts.com/css/helvetica-neue-55" rel="stylesheet">
+</head>
+
+<body>
+  <div id="container">
+    <header id="watchlist-header">
+      <h1 id="header-h1">FILMS FINDER</h1>
+      <p><a href="watchlist.html" id="header-button-wl"> watchlist</a></p>
+    </header>
+    <section id="search" class="search-fade">
+      <form action="" method="GET" id="search-form">
+        <input type="text" name="title" id="title-field" class="search-icon" placeholder="Star Wars" required>
+        <input type="submit" value="Search" id="search-btn">
+      </form>
+    </section>
+
+    <section id="film-list">
+      <!-- EMPTY CONTAINER -->
+      <div id="empty-state-container">
+        <!-- <svg id="svg-icon" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="5em" width="5em" xmlns="http://www.w3.org/2000/svg"><path d="M18 4l2 3h-3l-2-3h-2l2 3h-3l-2-3H8l2 3H7L5 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4h-4zm-6.75 11.25L10 18l-1.25-2.75L6 14l2.75-1.25L10 10l1.25 2.75L14 14l-2.75 1.25zm5.69-3.31L16 14l-.94-2.06L13 11l2.06-.94L16 8l.94 2.06L19 11l-2.06.94z"></path></svg>
+          <p>
+            Start exploring
+          </p> -->
+      </div>
+      <div id="film-item-container">
+        <!-- FILM LIST -->
+        <!-- <div id="film-item">
+  
+            <div id="film-poster">
+              <img src="/public/leonardo-da-vinci.jpg" alt="film image">
+            </div>
+  
+            <article id="film-info">
+              <div id="film-header">
+                <h1 id="film-title">ANOTHER TITLE: THE QWEANOTHER TITLE: THE QWE</h1>
+              </div>
+  
+              <div id="film-subheader">
+                <p id="film-duration">120min</p>
+                <p id="film-genre">Drama</p>
+                <button id="film-watchlist">add</button>
+              </div>
+  
+              <div id="film-plot">
+                <p id="film-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse eum tempore sunt, quas
+                  magnam quibusdam</p>
+              </div>
+            </article>
+          </div>
+          <hr> -->
+      </div>
+    </section>
+  </div>
+  <script src="src/script.js" type="module"></script>
+</body>
+
+</html>
