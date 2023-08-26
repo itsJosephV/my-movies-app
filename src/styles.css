@@ -27,7 +27,7 @@ body{
 header {
   /* border: 1px solid red; */
   background: rgb(21, 20, 20);
-  height: 150px; 
+  height: 260px; 
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -100,6 +100,7 @@ input[type="submit"]:hover {
   /* border: 1px solid red; */
   overflow-y: auto;
   height: 100%;
+  padding-top: 3rem;
 }
 
 #film-item-container {
@@ -108,6 +109,7 @@ input[type="submit"]:hover {
   flex-direction: column;
   align-items: center;
   padding: 1rem;  /* REMOVE THIS WHEN EMPTY */
+  margin-top: 20px;
 }
 
 #film-item {
@@ -117,7 +119,6 @@ input[type="submit"]:hover {
   height: 200px;
   min-width: 570px;
   padding: 5px;
-  margin-top: 50px;
 }
 
 #film-poster {
@@ -206,5 +207,19 @@ hr {
 }
 
 svg {
-  fill: rgb(62, 61, 61);
+  fill: rgb(53, 53, 53);
+
+}
+
+#no-results-msg {
+  display: flex;
+  flex-direction: column;
+  gap: .7rem;
+  align-items: center;
+  height: 100%;
+  justify-content: center;
+}
+
+#no-results-msg p {
+  color: rgb(110, 110, 110);
 }
