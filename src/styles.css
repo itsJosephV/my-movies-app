@@ -21,12 +21,14 @@ body{
   height: 780px;
   background-color: black;
   border-radius: 10px;
-
+  border: 1px solid rgb(43, 43, 43);
+  backdrop-filter: blur(10px);
 }
 
 header {
   /* border: 1px solid red; */
-  background: rgb(21, 20, 20);
+  
+  background: rgba(21, 20, 20);
   height: 260px; 
   display: flex;
   flex-direction: row;
@@ -34,6 +36,9 @@ header {
   justify-content: space-between;
   padding: 2rem;
   border-radius: 10px 10px 0 0;
+  border-bottom: 1px solid rgb(43, 43, 43);
+  backdrop-filter: blur(20px);
+
 
 }
 
@@ -50,7 +55,7 @@ header {
   transition: all 250ms;
 }
 
-#header-p:hover{
+#header-button-wl:hover{
   background-color: rgba(66, 66, 95, 0.7);
 }
 
@@ -66,17 +71,23 @@ header {
   justify-content: space-between;
   align-items: center;
   position: relative;
-  top: -1.25rem;
+  top: -1.60rem;
 }
 
 
 
 input[type="text"]{
-  background-color: rgb(44, 42, 42);
-  padding: .9rem;
+  background: rgba(21, 20, 20);
+  padding: 1rem;
   width: 100%;
   border-radius: 5px;
   border: none;
+  border: 1px solid rgb(43, 43, 43);
+}
+
+input[type="text"],
+input::placeholder {
+  font-size: 16px;
 }
 
 input[type="submit"] {
@@ -84,16 +95,17 @@ input[type="submit"] {
   border-radius: 5px;
   border: none;
   position: absolute;
-  right: 5px;
+  right: 10px;
   cursor: pointer;
   text-transform: uppercase;
-  font-weight: 500;
-  background-color: rgb(66, 66, 95);
+  font-weight: 600;
+  font-size: 10px;
+  background-color: rgb(61, 114, 157);
   transition: all 200ms;
 }
 
 input[type="submit"]:hover {
-  background-color: rgba(66, 66, 95, 0.7);
+  background-color: rgba(61, 114, 157, 0.7);
 }
 
 #film-list {
@@ -101,6 +113,7 @@ input[type="submit"]:hover {
   overflow-y: auto;
   height: 100%;
   padding-top: 3rem;
+  opacity: 1;
 }
 
 #film-item-container {
@@ -108,8 +121,8 @@ input[type="submit"]:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1rem;  /* REMOVE THIS WHEN EMPTY */
   margin-top: 20px;
+  padding: 1rem;  /* REMOVE THIS WHEN EMPTY */
 }
 
 #film-item {
@@ -118,7 +131,6 @@ input[type="submit"]:hover {
   flex-direction: row;
   height: 200px;
   min-width: 570px;
-  padding: 5px;
 }
 
 #film-poster {
@@ -189,7 +201,7 @@ input[type="submit"]:hover {
 hr {
   width: 100%;
   margin-top: 10px;
-  border-color: rgba(66, 66, 95, 0.4);
+  border-color: rgba(43, 43, 43, 0.4);
 }
 
 #empty-state-container {

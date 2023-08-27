@@ -1,8 +1,12 @@
-const filmList = document.querySelector("#film-list");
-const emptyStateContainer = document.querySelector("#empty-state-container");
-const filmItemContainer = document.querySelector("#film-item-container");
 const searchForm = document.querySelector("#search-form");
+const filmList = document.querySelector("#film-list");
+
+//film-watchlist
+
+const watchListButton = document.querySelector("#film-watchlist");
+
 const filmsfromLocalStorage = JSON.parse(localStorage.getItem("watchlist"));
+
 const key = import.meta.env.VITE_MOVIES_APIKEY;
 
 let resultArr = [];
@@ -24,7 +28,7 @@ function generateMovie(film, list) {
               <div id="film-subheader">
                 <p id="film-duration">${film.Runtime}</p>
                 <p id="film-genre">${film.Genre}</p>
-                <button id="film-watchlist">add</button>
+                <button id="film-watchlist" data-set-movie=${film.imdbID}>add</button>
               </div>
   
               <div id="film-plot">
@@ -34,9 +38,11 @@ function generateMovie(film, list) {
           </div>
           <hr>
       </div>
-      `;
+  `;
 }
 
+// WE OBTAIN THE imdbID from this first Fetch
+// Then we pass the function fetchMovies to each result of searchResult variable
 async function dataFetch(movie) {
   const URL = `https://www.omdbapi.com/?apikey=${key}&s=${movie}&type=movie`;
   const res = await fetch(URL);
@@ -63,6 +69,8 @@ async function fetchMovies(result) {
   const res = await fetch(URL);
   const data = await res.json();
 
+  console.log(data);
+
   let {
     Title,
     Ratings: [{ Value: imdbRating }],
@@ -72,7 +80,7 @@ async function fetchMovies(result) {
     Poster,
   } = data;
 
-  Poster === "N/A" ? (Poster = "/no-poster.png") : Poster;
+  Poster = Poster === "N/A" ? "/no-poster.png" : Poster;
 
   let resultObj = {
     imdbID: result.imdbID,
@@ -91,6 +99,23 @@ async function fetchMovies(result) {
   for (const result of resultArr) {
     generateMovie(result, filmList);
   }
+}
+
+function handleAddFilm(filmID) {
+  const targetFilm = resultArr.filter((item) => {
+    return item.imdbID === filmID;
+  });
+
+  if (filmsfromLocalStorage) {
+    watchListArr = filmsfromLocalStorage;
+  }
+
+  if (targetFilm !== undefined) {
+    watchListArr.push(targetFilm);
+  }
+
+  localStorage.setItem("watchlist", JSON.stringify(watchListArr));
+  alert("saved");
 }
 
 filmList.innerHTML = `
@@ -112,7 +137,7 @@ searchForm.addEventListener("submit", (e) => {
 });
 
 document.addEventListener("click", (e) => {
-  if (e.target.dataset.addFilm) {
-    handleAddFilm(e.target.dataset.addFilm);
+  if (e.target.dataset.setMovie) {
+    handleAddFilm(e.target.dataset.setMovie);
   }
 });
