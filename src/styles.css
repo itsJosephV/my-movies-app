@@ -23,6 +23,7 @@ body{
   border-radius: 10px;
   border: 1px solid rgb(43, 43, 43);
   backdrop-filter: blur(10px);
+  position: relative;
 }
 
 header {
@@ -234,4 +235,35 @@ svg {
 
 #no-results-msg p {
   color: rgb(110, 110, 110);
+}
+
+
+
+/** MY WATCHLIST STYLES **/
+
+#watch-film-list {
+  overflow-y: auto;
+  height: 100%;
+  padding-top: 3rem;
+  opacity: 1;
+}
+
+#watchlist-alert {
+  position: absolute;
+  right: 7px;
+  top: 7px;
+  border-radius: 5px;
+  padding: .5rem .7rem;
+  display: flex;
+  justify-content: center;
+  background-color: rgb(182, 47, 47);
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 500;
+  align-items: center;
+  gap: .2rem;
+}
+
+#watchlist-alert svg {
+  fill: white;
 }

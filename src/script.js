@@ -96,15 +96,17 @@ async function fetchMovies(result) {
 
   filmList.innerHTML = "";
 
-  for (const result of resultArr) {
-    generateMovie(result, filmList);
-  }
+  resultArr.forEach((result) => {
+    generateMovie(result, filmList)
+  })
+
+
 }
 
 function handleAddFilm(filmID) {
   const targetFilm = resultArr.filter((item) => {
     return item.imdbID === filmID;
-  });
+  })[0];
 
   if (filmsfromLocalStorage) {
     watchListArr = filmsfromLocalStorage;
@@ -115,7 +117,7 @@ function handleAddFilm(filmID) {
   }
 
   localStorage.setItem("watchlist", JSON.stringify(watchListArr));
-  alert("saved");
+  // alert("saved");
 }
 
 filmList.innerHTML = `
