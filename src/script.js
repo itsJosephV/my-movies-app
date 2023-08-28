@@ -51,7 +51,7 @@ async function dataFetch(movie) {
   let searchResult = data.Search;
 
   if (searchResult === undefined) {
-    renderNoMoviesFound()
+    renderNoMoviesFound();
   }
 
   for (const result of searchResult) {
@@ -92,8 +92,8 @@ async function fetchMovies(result) {
   filmList.innerHTML = "";
 
   resultArr.forEach((result) => {
-    generateMovie(result, filmList)
-  })
+    generateMovie(result, filmList);
+  });
 }
 
 function renderNoMoviesFound() {
@@ -142,13 +142,16 @@ function handleAddFilm(filmID) {
     watchListArr = filmsfromLocalStorage;
   }
 
-  if (targetFilm !== undefined) {
+  const filmExists = watchListArr.some((film) => film.imdbID === filmID);
+
+  if (filmExists) {
+    alert("exist");
+  } else if (targetFilm !== undefined) {
     watchListArr.push(targetFilm);
+    renderAddedAlert();
   }
 
   localStorage.setItem("watchlist", JSON.stringify(watchListArr));
-  renderAddedAlert()
-  // alert("saved");
 }
 
 filmList.innerHTML = `
