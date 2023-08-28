@@ -19,7 +19,7 @@ function renderWatchList(watchListArr) {
   watchListContainer.innerHTML = "";
   watchListArr.forEach((film) => {
     watchListContainer.innerHTML += `
-      <div id="film-item-container">
+        <div id="film-item-container">
             <div id="film-item">
               <div id="film-poster">
                 <img src="${film.Poster}" alt="film image">
@@ -33,7 +33,7 @@ function renderWatchList(watchListArr) {
                 <div id="film-subheader">
                   <p id="film-duration">${film.Runtime}</p>
                   <p id="film-genre">${film.Genre}</p>
-                  <button id="film-watchlist" data-delete-movie=${film.imdbID}>delete</button>
+                  <button id="wl-film-watchlist" data-delete-movie=${film.imdbID}>delete</button>
                 </div>
     
                 <div id="film-plot">

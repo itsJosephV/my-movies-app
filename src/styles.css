@@ -89,6 +89,7 @@ input[type="text"]{
 input[type="text"],
 input::placeholder {
   font-size: 16px;
+  text-transform: uppercase;
 }
 
 input[type="submit"] {
@@ -114,7 +115,6 @@ input[type="submit"]:hover {
   overflow-y: auto;
   height: 100%;
   padding-top: 3rem;
-  opacity: 1;
 }
 
 #film-item-container {
@@ -157,7 +157,6 @@ input[type="submit"]:hover {
   flex-direction: column;
   justify-content: center;
   gap: 1rem;
-  padding: .3rem;
 }
 
 #film-header {
@@ -170,14 +169,19 @@ input[type="submit"]:hover {
   justify-content: space-between;
 }
 
-#film-subheader button {
+#film-watchlist-btn {
   all: unset;
-  border: 1px solid white;
+  background-color: rgb(33, 132, 107);
   padding: 3px 8px;
   border-radius: 5px;
   text-transform: uppercase;
+  font-weight: 500;
   font-size: 10px;
   cursor: pointer;
+}
+
+#film-watchlist-btn:hover {
+  background-color: rgba(33, 132, 107, 0.8);
 }
 
 #film-plot {
@@ -266,4 +270,21 @@ svg {
 
 #watchlist-alert svg {
   fill: white;
+}
+
+
+#wl-film-watchlist {
+  all: unset;
+  background-color: rgb(183, 68, 103);
+  padding: 3px 8px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+#wl-film-watchlist:hover {
+  background-color: rgba(183, 68, 103, 0.8);
+
 }
