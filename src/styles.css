@@ -42,7 +42,41 @@ header {
   border-radius: 10px 10px 0 0;
   border-bottom: 1px solid rgb(43, 43, 43);
   backdrop-filter: blur(20px);
+  /* border: 1px solid red; */
+
 }
+
+#header-info {
+  /* border: 1px solid red; */
+  display: flex;
+  flex-direction: column;
+  gap: .3rem;
+  width: 55%;
+}
+
+#header-text {
+  color: gray;
+  line-height: 1.2rem;
+}
+
+#header-techs {
+  margin-top: 10px;
+  /* border: 1px solid red; */
+  display: flex;
+  align-items: center;
+  gap: .3rem;
+}
+
+#header-techs p {
+  color: gray;
+}
+
+#header-icon {
+  display: flex;
+  align-items: center;
+}
+
+
 
 #header-button-wl {
   text-decoration: none;
@@ -168,6 +202,12 @@ input[type="submit"]:hover {
   /* border: 1px solid rgba(66, 66, 95, 0.7); */
   display: flex;
   justify-content: space-between;
+  font-size: 13px;
+  align-items: center;
+}
+
+#film-subheader p {
+  color: gray;
 }
 
 #film-watchlist-btn {
@@ -217,7 +257,7 @@ input[type="submit"]:hover {
   /* border: 1px solid rgba(66, 66, 95, 0.7); */
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3; 
+  -webkit-line-clamp: 4; 
   line-height: 1.4em; 
   white-space: normal;
   overflow: hidden;

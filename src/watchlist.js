@@ -32,6 +32,7 @@ function renderWatchList(watchListArr) {
     
                 <div id="film-subheader">
                   <p id="film-duration">${film.Runtime}</p>
+                  <p id="film-ratings">${film.imdbRating}</p>
                   <p id="film-genre">${film.Genre}</p>
                   <button id="wl-film-watchlist" data-delete-movie=${film.imdbID}>delete</button>
                 </div>

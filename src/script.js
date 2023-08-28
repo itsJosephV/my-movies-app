@@ -12,7 +12,9 @@ const key = import.meta.env.VITE_MOVIES_APIKEY;
 let resultArr = [];
 let watchListArr = [];
 
+
 function generateMovie(film, list) {
+  
   list.innerHTML += `
       <div id="film-item-container">
           <div id="film-item">
@@ -27,6 +29,7 @@ function generateMovie(film, list) {
   
               <div id="film-subheader">
                 <p id="film-duration">${film.Runtime}</p>
+                <p id="film-ratings">${film.imdbRating}</p>
                 <p id="film-genre">${film.Genre}</p>
                 <button id="film-watchlist-btn" data-set-movie=${film.imdbID}>add</button>
               </div>
@@ -60,11 +63,14 @@ async function dataFetch(movie) {
 }
 
 async function fetchMovies(result) {
+  // const loadingElement = document.querySelector('#loading')
+  // loadingElement.style.display = 'block'
   const URL = `https://www.omdbapi.com/?apikey=${key}&i=${result.imdbID}`;
   const res = await fetch(URL);
   const data = await res.json();
 
-  console.log(data);
+
+  // console.log(data);
 
   let {
     Title,
@@ -137,6 +143,8 @@ function handleAddFilm(filmID) {
   const targetFilm = resultArr.filter((item) => {
     return item.imdbID === filmID;
   })[0];
+
+  // const targetFilmData = targetFilm[0]
 
   if (filmsfromLocalStorage) {
     watchListArr = filmsfromLocalStorage;
