@@ -8,15 +8,17 @@
 }
 
 body{
-  max-height: 100vh;
+  min-height: 100vh;
   max-width: 100vw;
-  overflow: hidden;
+  padding: 3rem 0 2rem;
+  /* border: 1px solid rgba(66, 66, 95, 0.7); */
+
 }
 
 #container {
   display: flex;
   flex-direction: column;
-  margin: 6vh auto;
+  margin: auto;
   max-width: 600px;
   height: 780px;
   background-color: black;
@@ -24,11 +26,12 @@ body{
   border: 1px solid rgb(43, 43, 43);
   backdrop-filter: blur(10px);
   position: relative;
+  /* border: 1px solid rgba(66, 66, 95, 0.7); */
+
 }
 
 header {
   /* border: 1px solid red; */
-  
   background: rgba(21, 20, 20);
   height: 260px; 
   display: flex;
@@ -39,8 +42,6 @@ header {
   border-radius: 10px 10px 0 0;
   border-bottom: 1px solid rgb(43, 43, 43);
   backdrop-filter: blur(20px);
-
-
 }
 
 #header-button-wl {
@@ -178,6 +179,26 @@ input[type="submit"]:hover {
   font-weight: 500;
   font-size: 10px;
   cursor: pointer;
+}
+
+#added-movie-alert {
+  position: absolute;
+  right: 7px;
+  top: 7px;
+  border-radius: 5px;
+  padding: .5rem .7rem;
+  display: flex;
+  justify-content: center;
+  background-color: rgb(80, 151, 92);
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 500;
+  align-items: center;
+  gap: .2rem;
+}
+
+#added-movie-alert svg {
+  fill: white;
 }
 
 #film-watchlist-btn:hover {
