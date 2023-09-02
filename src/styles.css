@@ -13,8 +13,8 @@
   --hover-color: #e4e4e7;
   --links-color: #71717a;
   --icons-color: #3f3f46;
-  --add-btn: #059669;
-  --delete-btn: #f43f5e;
+  --add-btn: #6366f1;
+  --delete-btn: #d97706;
   
 }
 
@@ -306,7 +306,7 @@ input[type="submit"]:hover {
 }
 
 #film-watchlist-btn:hover {
-  background-color: rgba(33, 132, 107, 0.8);
+  background-color: rgba(99, 102, 241, 0.8);
 }
 
 #film-plot {
@@ -363,10 +363,8 @@ svg {
 }
 
 #no-results-msg p {
-  color: rgb(110, 110, 110);
+  color: var(--text-color);
 }
-
-
 
 /** MY WATCHLIST STYLES **/
 
@@ -410,6 +408,34 @@ svg {
 }
 
 #wl-film-watchlist:hover {
-  background-color: rgba(183, 68, 103, 0.8);
+  background-color: rgb(217, 119, 6, 0.8);
 
 }
+
+#loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  height: 100%;
+}
+
+#loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid var(--text-color);
+  border-bottom-color: var(--button-color);
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+  }
+
+  @keyframes rotation {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+  } 
