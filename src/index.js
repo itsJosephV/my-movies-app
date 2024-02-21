@@ -72,7 +72,7 @@ async function fetchMovies(result) {
   const res = await fetch(URL);
   const data = await res.json();
 
-  // console.log(data);
+  console.log(data);
 
   let {
     Title,

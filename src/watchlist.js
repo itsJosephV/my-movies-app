@@ -106,24 +106,3 @@ document.addEventListener("click", (e) => {
     handleDeleteMovie(e.target.dataset.deleteMovie);
   }
 });
-
-// function handleDeleteMovie(filmId) {
-//   console.log("Deleting movie with ID:", filmId);
-
-//   const targetFilm = myMovies.find((item) => {
-//     return item.imdbID === filmId;
-//   });
-
-//   console.log("Target Film:", targetFilm);
-
-//   if (targetFilm) {
-//     const targetIndex = myMovies.indexOf(targetFilm);
-//     if (targetIndex !== -1) {
-//       myMovies.splice(targetIndex, 1);
-//       console.log("Updated myMovies Array:", myMovies);
-//       localStorage.setItem("watchlist", JSON.stringify(myMovies));
-//       renderDeletedAlert();
-//       renderWatchList(myMovies);
-//     }
-//   }
-// }

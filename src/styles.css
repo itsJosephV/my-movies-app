@@ -18,11 +18,11 @@
   
 }
 
-body{
+body {
   min-height: 100vh;
   max-width: 100vw;
-  padding: 3rem 0 2rem;
-  /* border: 1px solid rgba(66, 66, 95, 0.7); */
+  padding: 2.5rem .7rem 2rem .7rem;
+  /* border: 1px solid rgba(186, 78, 78, 0.7); */
 
 }
 
@@ -37,7 +37,7 @@ body{
   border: 1px solid rgb(43, 43, 43);
   backdrop-filter: blur(10px);
   position: relative;
-  /* border: 1px solid rgba(66, 66, 95, 0.7); */
+  /* border: 1px solid rgba(95, 73, 66, 0.7); */
 }
 
 header {
